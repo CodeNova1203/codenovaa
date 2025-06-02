@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CodeNova</title>
+<style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    header {
+      background-color: #141e30;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .logo {
+      max-height: 60px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #1c1c1c;
+    }
+    nav button {
+      background: none;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    nav button:hover {
+      background-color: #444;
+    }
+    section {
+      display: none;
+      padding: 30px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+      background-color: #2e2e2e;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #ddd;
+    }
+    table, th, td {
+      border: 1px solid #444;
+    }
+    th, td {
+      padding: 12px;
+    }
+    button.link {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button.link:hover {
+      background-color: #0056b3;
+    }
+    input[type="number"] {
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 100%;
+    }
+  </style>
+<script>
+    function showSection(id) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(sec => sec.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+  </script>
+<style>
+body {
+  background-image: url('https://www.transparenttextures.com/patterns/circles.png'), 
+                    url('https://cdn.pixabay.com/photo/2013/07/13/10/07/computer-156345_1280.png');
+  background-repeat: repeat, no-repeat;
+  background-position: top left, bottom right;
+  background-size: auto, 300px;
+  background-color: #f4f7fa;
+}
+</style><style>
+@keyframes clickPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.animated-click {
+  transition: transform 0.2s ease;
+}
+.animated-click:active {
+  animation: clickPop 0.3s ease;
+}
+</style></head>
+<body>
+<header>
+<img alt="Logo CodeNova" class="logo" src="logo.png"/>
+<h1>Votre code, notre mission.</h1>
+</header>
+<nav>
+<button onclick="showSection('personnel')">Employés</button>
+<button onclick="showSection('objectif')">Objectif</button>
+<button onclick="showSection('rdv')">Prendre RDV</button>
+<button onclick="showSection('problemes')">Problèmes</button>
+<button onclick="showSection('finances')">Finances</button>
+</nav>
+<section id="personnel">
+<h2>Personnel</h2>
+<table>
+<tr><th>Poste</th><th>Nom</th><th>Téléphone</th><th>Email</th></tr>
+<tr><td>Manager Chef</td><td>FOUL Samy</td><td>0610463851</td><td>codenova.1203@gmail.com</td></tr>
+<tr><td>Sous-Manager</td><td>Abderahman Baghdaddi</td><td>0753641332</td><td>codenova.1203@gmail.com</td></tr>
+</table>
+</section>
+<section id="objectif">
+<h2>Objectif</h2>
+<p>Notre mission est de résoudre tout type de problème informatique : développement web, bugs logiciels, sécurité, optimisation, accompagnement digital. Nous aidons les petites entreprises à se digitaliser efficacement.</p>
+</section>
+<section id="rdv">
+<h2>Prise de Rendez-vous</h2>
+<p>Choisissez comment vous souhaitez nous contacter :</p>
+<button class="link" onclick="window.location='mailto:codenova.1203@gmail.com?subject=Prise de rendez-vous'">📧 Email</button>
+<button class="link" onclick="window.location='sms:+33610463851'">📱 SMS</button>
+</section>
+<section id="problemes">
+<h2>Choisissez un Problème</h2>
+<form>
+<label><input type="checkbox"/> Problème de connexion internet</label><br/>
+<label><input type="checkbox"/> Ordinateur lent</label><br/>
+<label><input type="checkbox"/> Virus ou malware</label><br/>
+<label><input type="checkbox"/> Écran cassé</label><br/>
+<label><input type="checkbox"/> Clavier défectueux</label><br/>
+<label><input type="checkbox"/> Installation de logiciel</label><br/>
+<label><input type="checkbox"/> Mise à jour système</label><br/>
+<label><input type="checkbox"/> Création de site web</label><br/>
+<label><input type="checkbox"/> Récupération de données</label><br/>
+<label><input type="checkbox"/> Autre problème technique</label><br/>
+</form>
+</section>
+<section id="finances">
+<h2>Finances</h2>
+<table>
+<tr><td>Salaire des employés</td><td>1 € / an</td></tr>
+<tr><td>Salaire de l'entreprise</td><td>15 000 € net</td></tr>
+<tr><td>Bénéfice du patron</td><td>5 993 €</td></tr>
+</table>
+<label>Entrer un revenu :</label>
+<input placeholder="Montant en €" type="number"/>
+</section>
+<script>
+document.querySelectorAll('button, a').forEach(el => {
+  el.classList.add('animated-click');
+});
+</script></body>
+</html>
